@@ -69,16 +69,16 @@ else
 		rm dt.txt
 		echo $dt >> dt.txt
 		./simple
-		mv mediciones.txt $sum_dt=$dt/.
-		mv movie1.vtf $sum_dt=$dt/.
-		mv movie2.vtf $sum_dt=$dt/.
-		mv T.txt $sum_dt=$dt/.
-		mv test.txt $sum_dt=$dt/.
+		mv mediciones.txt $sum\_dt=$dt/.
+		mv movie1.vtf $sum\_dt=$dt/.
+		mv movie2.vtf $sum\_dt=$dt/.
+		mv T.txt $sum\_dt=$dt/.
+		mv test.txt $sum\_dt=$dt/.
 		mv posiciones.txt $nombre/.
 		mv velocidades.txt $nombre/.
 		mv ultimo_tiempo.txt $nombre/.
-		cp plot.py $sum_dt=$dt
-		mv $sum_dt=$dt $nombre/.
+		cp plot.py $sum\_dt=$dt
+		mv $sum\_dt=$dt $nombre/.
 	else
 		mkdir dt=$dt
 		rm dt.txt
