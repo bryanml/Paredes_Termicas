@@ -1,0 +1,1 @@
+mv ~/Descargas/Paredes_Termicas/1/prueba.txt ~/Descargas/Paredes_Termicas/
