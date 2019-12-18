@@ -1,5 +1,6 @@
 T1=1.0
 T2=1.0
+z_space_wall=20
 mkdir corridas_anteriores
 echo $T1 >> T1.txt
 echo $T2 >> T2.txt
