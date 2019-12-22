@@ -41,7 +41,9 @@ then
 	rm dt.txt
 	echo $dt >> dt.txt
 	./simple
-	mv dens_prof.txt dt=$dt/.
+	mv dens_z_prof.txt dt=$dt/.
+	mv dens_x_prof.txt dt=$dt/.
+	mv dens_y_prof.txt dt=$dt/.
 	mv mediciones.txt dt=$dt/.
 	mv movie1.vtf dt=$dt/.
 	mv movie2.vtf dt=$dt/.
@@ -73,7 +75,9 @@ else
 		rm dt.txt
 		echo $dt >> dt.txt
 		./simple
-		mv dens_prof.txt $sum\_dt=$dt/.
+		mv dens_z_prof.txt $sum\_dt=$dt/.
+		mv dens_x_prof.txt $sum\_dt=$dt/.
+		mv dens_y_prof.txt $sum\_dt=$dt/.
 		mv mediciones.txt $sum\_dt=$dt/.
 		mv movie1.vtf $sum\_dt=$dt/.
 		mv movie2.vtf $sum\_dt=$dt/.
@@ -89,7 +93,9 @@ else
 		rm dt.txt
 		echo $dt >> dt.txt
 		./simple
-		mv dens_prof.txt dt=$dt/.
+		mv dens_z_prof.txt dt=$dt/.
+		mv dens_x_prof.txt dt=$dt/.
+		mv dens_y_prof.txt dt=$dt/.
 		mv mediciones.txt dt=$dt/.
 		mv movie1.vtf dt=$dt/.
 		mv movie2.vtf dt=$dt/.

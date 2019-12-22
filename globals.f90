@@ -1,7 +1,7 @@
 module globals
 implicit none
 
-integer, parameter :: N1 = 200, N2 = 200, N = N1+N2, nbins=500
+integer, parameter :: N1 = 200, N2 = 200, N = N1+N2, nbins=50
 real(kind=8), allocatable :: r(:,:), v(:,:), f(:,:), fl(:,:), eps(:,:), mass(:), ecut(:,:),boundary(:)!,dens_z(:,:)
 real(kind=8), parameter :: rho = 0.2, thermal_skin = 1.2, rc2 = 2.5*2.5
 integer , allocatable :: tipe(:)

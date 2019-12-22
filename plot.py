@@ -3,21 +3,37 @@ import matplotlib.pyplot as plt
 
 data = np.loadtxt('test.txt');
 data3 = np.loadtxt('mediciones.txt');
-data1 = np.loadtxt('dens_prof.txt');
+dataz = np.loadtxt('dens_z_prof.txt');
+datax = np.loadtxt('dens_x_prof.txt');
+datay = np.loadtxt('dens_y_prof.txt');
 E_cin = data3[:,0];
 E_pot = data3[:,1];
 E_mec = data3[:,2];
 t = data3[:,3];
 
-r = data1[:,0];
-dens1 = data1[:,1];
-dens2 = data1[:,2];
+z = dataz[:,0];
+x = datax[:,0];
+y = datay[:,0];
+densz1 = dataz[:,1];
+densz2 = dataz[:,2];
+densx1 = datax[:,1];
+densx2 = datax[:,2];
+densy1 = datay[:,1];
+densy2 = datay[:,2];
 
 plt.figure(1)
-plt.plot(t,2*E_cin/3,'-ok',t, E_mec, 'r')
+plt.title('Temperatura')
+plt.plot(t,2*E_cin/3,'-ok')
 plt.figure(2)
+plt.title('densidad en z')
 #plt.title('Temperatura', fontsize=16)
-plt.plot(r, dens1, 'ok',r, dens2, 'or')
+plt.plot(z, densz1, '-k',z, densz2+1, '-r')
+plt.figure(3)
+plt.title('densidad en x')
+plt.plot(x, densx1, '-k',x, densx2+1, '-r')
+plt.figure(4)
+plt.title('densidad en y')
+plt.plot(y, densy1, '-k',y, densy2+1, '-r')
 plt.show()
 
 # data = np.loadtxt('mediciones.txt');
