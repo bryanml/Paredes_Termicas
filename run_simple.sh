@@ -1,9 +1,12 @@
-T1=1.0
-T2=1.0
-z_space_wall=20
+T1=0.5
+T2=0.5
+z_space_wall=8
 mkdir corridas_anteriores
+rm T1.txt
 echo $T1 >> T1.txt
+rm T2.txt
 echo $T2 >> T2.txt
+rm z_space_wall.txt
 echo $z_space_wall>>z_space_wall.txt
 echo ¿iniciar o continuar\?
 read comando
@@ -38,6 +41,7 @@ then
 	rm dt.txt
 	echo $dt >> dt.txt
 	./simple
+	mv dens_prof.txt dt=$dt/.
 	mv mediciones.txt dt=$dt/.
 	mv movie1.vtf dt=$dt/.
 	mv movie2.vtf dt=$dt/.
@@ -69,6 +73,7 @@ else
 		rm dt.txt
 		echo $dt >> dt.txt
 		./simple
+		mv dens_prof.txt $sum\_dt=$dt/.
 		mv mediciones.txt $sum\_dt=$dt/.
 		mv movie1.vtf $sum\_dt=$dt/.
 		mv movie2.vtf $sum\_dt=$dt/.
@@ -84,6 +89,7 @@ else
 		rm dt.txt
 		echo $dt >> dt.txt
 		./simple
+		mv dens_prof.txt dt=$dt/.
 		mv mediciones.txt dt=$dt/.
 		mv movie1.vtf dt=$dt/.
 		mv movie2.vtf dt=$dt/.

@@ -44,6 +44,8 @@ do i=1,N_evo !!Empiezo a medir
 		end do
 	end if
 	call energia
+	!call dens(0)
+	!call dens(1)
 	ultimo_tiempo = ultimo_tiempo + dt
 	write(unit=10,fmt=*) E_cin1/N+E_cin2/N2, E_pot/N, E_mec/N,ultimo_tiempo
 	call test
@@ -52,6 +54,8 @@ do i=1,N_evo !!Empiezo a medir
 	pres = pres + p !! Presión como valor medio de la presión instantanea
 	p2 = P2 + p*p !! P^2
 end do 
+
+!dens_z(:,:) = dens_z(:,:)/N_evo
 
 p2 = p2/N_evo-pres*pres/(N_evo*N_evo) !! Sigma_P ^2
 temp = 2*temp/(3*N_evo) !! Temperatura

@@ -18,7 +18,7 @@ program simple
     call zigset(seed)
 
 ![FIN NO TOCAR]
-allocate(r(3,N),v(3,N),f(3,N),ecut(2,2),eps(2,2), tipe(N), mass(2))
+allocate(r(3,N),v(3,N),f(3,N),ecut(2,2),eps(2,2), tipe(N), mass(2),boundary(3))!,dens_z(nbins,2))
 
 open(unit=10,file='mediciones.txt',status='replace') 
 open(unit=20,file='movie1.vtf',status='replace') !! Guarda las posiciones
@@ -30,7 +30,7 @@ open(unit=50,file='test.txt',status='replace')
 
 !sigma =  reshape((/ 1.0, 1.0, 1.0, 1.0 /), shape(sigma))
 eps  =  reshape((/ 1.0, 0.5, 0.5, 1.0 /), shape(eps))
-mass = reshape((/1.0, 1.5/), shape(mass))
+mass = reshape((/1.0, 2.0/), shape(mass))
 open(unit=1,file='dt.txt',status='old')
 read(unit=1,fmt=*) dt
 close(unit=1)
@@ -85,10 +85,16 @@ do j=1,N1
 end do
 
 !call thermal_walls(1)
+boundary(1) = L
+boundary(2) = L
+boundary(3) = z_space_wall
 call fuerza !! Fuerza del estado inicial
 call CPU_TIME(tinicial)
 call evol_dinamica
 call guardar
+call dens(0)
+call dens(1)
+call dens(2)
 call CPU_TIME(tfinal)
 minutos = floor((tfinal-tinicial)/60)
 segundos = MOD((tfinal-tinicial),60.0)
@@ -100,17 +106,17 @@ close(unit=30)
 close(unit=40)
 close(unit=50)
 
-deallocate(r,v,f,ecut,eps,tipe,mass)
+deallocate(r,v,f,ecut,eps, tipe, mass,boundary)!,dens_z)
 
 !! FIN FIN edicion
 !! 
 ![No TOCAR]
 ! Escribir la última semilla para continuar con la cadena de numeros aleatorios 
 
-open(unit=10,file='seed.dat',status='unknown')
+open(unit=100,file='seed.dat',status='unknown')
 seed = shr3() 
-write(10,*) seed
-close(10)
+write(100,*) seed
+close(100)
 ![FIN no Tocar]        
 
 

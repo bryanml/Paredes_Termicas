@@ -3,17 +3,21 @@ import matplotlib.pyplot as plt
 
 data = np.loadtxt('test.txt');
 data3 = np.loadtxt('mediciones.txt');
-
+data1 = np.loadtxt('dens_prof.txt');
 E_cin = data3[:,0];
 E_pot = data3[:,1];
 E_mec = data3[:,2];
 t = data3[:,3];
 
+r = data1[:,0];
+dens1 = data1[:,1];
+dens2 = data1[:,2];
+
 plt.figure(1)
 plt.plot(t,2*E_cin/3,'-ok',t, E_mec, 'r')
 plt.figure(2)
 #plt.title('Temperatura', fontsize=16)
-plt.plot(t, data[:,0], 'ok',t, data[:,1]+1, 'or')
+plt.plot(r, dens1, 'ok',r, dens2, 'or')
 plt.show()
 
 # data = np.loadtxt('mediciones.txt');

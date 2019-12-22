@@ -28,7 +28,7 @@ do i=1,N-1
 end do 
 
 do j = 1,N
-    E_cin1 = E_cin1+0.5*(v(1,j)*v(1,j)+v(2,j)*v(2,j)+v(3,j)*v(3,j))/mass(tipe(j)) !! Energía cinética
+    E_cin1 = E_cin1+0.5*(v(1,j)*v(1,j)+v(2,j)*v(2,j)+v(3,j)*v(3,j))*mass(tipe(j)) !! Energía cinética
 end do
 
 !do j = N1+1,N
