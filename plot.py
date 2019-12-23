@@ -6,10 +6,16 @@ data3 = np.loadtxt('mediciones.txt');
 dataz = np.loadtxt('dens_z_prof.txt');
 datax = np.loadtxt('dens_x_prof.txt');
 datay = np.loadtxt('dens_y_prof.txt');
+temp_prof=np.loadtxt('temp_z_promedio.txt');
+
+
 E_cin = data3[:,0];
 E_pot = data3[:,1];
 E_mec = data3[:,2];
 t = data3[:,3];
+
+r = temp_prof[0,:];
+temp = temp_prof[1,:];
 
 z = dataz[:,0];
 x = datax[:,0];
@@ -29,11 +35,12 @@ plt.title('densidad en z')
 #plt.title('Temperatura', fontsize=16)
 plt.plot(z, densz1, '-k',z, densz2+1, '-r')
 plt.figure(3)
-plt.title('densidad en x')
-plt.plot(x, densx1, '-k',x, densx2+1, '-r')
-plt.figure(4)
-plt.title('densidad en y')
-plt.plot(y, densy1, '-k',y, densy2+1, '-r')
+plt.plot(r,temp,'-or')
+#plt.title('densidad en x')
+#plt.plot(x, densx1, '-k',x, densx2+1, '-r')
+#plt.figure(4)
+#plt.title('densidad en y')
+#plt.plot(y, densy1, '-k',y, densy2+1, '-r')
 plt.show()
 
 # data = np.loadtxt('mediciones.txt');

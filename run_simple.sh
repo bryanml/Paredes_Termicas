@@ -1,5 +1,5 @@
-T1=0.5
-T2=0.5
+T1=1.0
+T2=1.0
 z_space_wall=8
 mkdir corridas_anteriores
 rm T1.txt
@@ -44,11 +44,16 @@ then
 	mv dens_z_prof.txt dt=$dt/.
 	mv dens_x_prof.txt dt=$dt/.
 	mv dens_y_prof.txt dt=$dt/.
+	mv temp_z_prof.txt dt=$dt/.
+	mv temp_z_promedio.txt dt=$dt/.
 	mv mediciones.txt dt=$dt/.
 	mv movie1.vtf dt=$dt/.
 	mv movie2.vtf dt=$dt/.
 	mv T.txt dt=$dt/.
 	mv test.txt dt=$dt/.
+	cp posiciones.txt dt=$dt/.
+	cp velocidades.txt dt=$dt/.
+	cp ultimo_tiempo.txt dt=$dt/.
 	mv posiciones.txt $nombre/.
 	mv velocidades.txt $nombre/.
 	mv ultimo_tiempo.txt $nombre/.
@@ -78,11 +83,16 @@ else
 		mv dens_z_prof.txt $sum\_dt=$dt/.
 		mv dens_x_prof.txt $sum\_dt=$dt/.
 		mv dens_y_prof.txt $sum\_dt=$dt/.
+		mv temp_z_prof.txt $sum\_dt=$dt/.
+		mv temp_z_promedio.txt $sum\_dt=$dt/.
 		mv mediciones.txt $sum\_dt=$dt/.
 		mv movie1.vtf $sum\_dt=$dt/.
 		mv movie2.vtf $sum\_dt=$dt/.
 		mv T.txt $sum\_dt=$dt/.
 		mv test.txt $sum\_dt=$dt/.
+		cp posiciones.txt $sum\_dt=$dt/.
+		cp velocidades.txt $sum\_dt=$dt/.
+		cp ultimo_tiempo.txt $sum\_dt=$dt/.
 		mv posiciones.txt $nombre/.
 		mv velocidades.txt $nombre/.
 		mv ultimo_tiempo.txt $nombre/.
@@ -96,11 +106,16 @@ else
 		mv dens_z_prof.txt dt=$dt/.
 		mv dens_x_prof.txt dt=$dt/.
 		mv dens_y_prof.txt dt=$dt/.
+		mv temp_z_prof.txt dt=$dt/.
+		mv temp_z_promedio.txt dt=$dt/.
 		mv mediciones.txt dt=$dt/.
 		mv movie1.vtf dt=$dt/.
 		mv movie2.vtf dt=$dt/.
 		mv T.txt dt=$dt/.
 		mv test.txt dt=$dt/.
+		cp posiciones.txt dt=$dt/.
+		cp velocidades.txt dt=$dt/.
+		cp ultimo_tiempo.txt dt=$dt/.
 		mv posiciones.txt $nombre/.
 		mv velocidades.txt $nombre/.
 		mv ultimo_tiempo.txt $nombre/.

@@ -31,9 +31,6 @@ do j = 1,N
     E_cin1 = E_cin1+0.5*(v(1,j)*v(1,j)+v(2,j)*v(2,j)+v(3,j)*v(3,j))*mass(tipe(j)) !! Energía cinética
 end do
 
-!do j = N1+1,N
-!    E_cin2 = E_cin2+0.5*(v(1,j)*v(1,j)+v(2,j)*v(2,j)+v(3,j)*v(3,j))/mass(tipe(j)) !! Energía cinética
-!end do
 E_mec = E_cin1+E_cin2+E_pot !! Energía mecánica
 p = p/(L*L*L)+T*rho !! Presión instantanea
 end subroutine energia

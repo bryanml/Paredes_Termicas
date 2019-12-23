@@ -6,7 +6,7 @@ fcomp = gfortran #ifort # /opt/intel/compiler70/ia32/bin/ifc
 flags =  -O3 
 
 # Remote compilation
-OBJS = ziggurat.o simple.o fuerza.o energia.o min_energia.o inicio.o verlet_pos.o globals.o reubicar.o verlet_vel.o lgv_fuerza.o evol_dinamica.o thermal_walls.o test.o guardar.o dens.o
+OBJS = ziggurat.o simple.o fuerza.o energia.o min_energia.o inicio.o verlet_pos.o globals.o reubicar.o verlet_vel.o lgv_fuerza.o evol_dinamica.o thermal_walls.o test.o guardar.o dens.o temp_prof.o
 
 .SUFFIXES:            # this deletes the default suffixes 
 .SUFFIXES: .f90 .o    # this defines the extensions I want 
@@ -23,7 +23,7 @@ clean:
 	rm ./*.o ./*.mod	
 
 
-simple.o: ziggurat.o simple.f90 energia.o fuerza.o inicio.o verlet_pos.o globals.o min_energia.o reubicar.o verlet_vel.o lgv_fuerza.o evol_dinamica.o thermal_walls.o test.o guardar.o dens.o
+simple.o: ziggurat.o simple.f90 energia.o fuerza.o inicio.o verlet_pos.o globals.o min_energia.o reubicar.o verlet_vel.o lgv_fuerza.o evol_dinamica.o thermal_walls.o test.o guardar.o dens.o temp_prof.o
 globals.o: globals.f90
 reubicar.o: reubicar.f90 globals.o
 inicio.o: inicio.f90 globals.o
@@ -38,3 +38,4 @@ thermal_walls.o: thermal_walls.f90 globals.o
 test.o: test.f90 globals.o
 guardar.o: guardar.f90 globals.o
 dens.o: dens.f90 globals.o
+temp_prof.o: temp_prof.f90 globals.o

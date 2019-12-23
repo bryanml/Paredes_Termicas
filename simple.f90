@@ -18,7 +18,7 @@ program simple
     call zigset(seed)
 
 ![FIN NO TOCAR]
-allocate(r(3,N),v(3,N),f(3,N),ecut(2,2),eps(2,2), tipe(N), mass(2),boundary(3))!,dens_z(nbins,2))
+allocate(r(3,N),v(3,N),f(3,N),ecut(2,2),eps(2,2), tipe(N), mass(2),boundary(3),temp_z(n_layers),temp_z_promedio(n_layers))!,dens_z(nbins,2))
 
 open(unit=10,file='mediciones.txt',status='replace') 
 open(unit=20,file='movie1.vtf',status='replace') !! Guarda las posiciones
@@ -106,7 +106,7 @@ close(unit=30)
 close(unit=40)
 close(unit=50)
 
-deallocate(r,v,f,ecut,eps, tipe, mass,boundary)!,dens_z)
+deallocate(r,v,f,ecut,eps, tipe, mass,boundary,temp_z,temp_z_promedio)!,dens_z)
 
 !! FIN FIN edicion
 !! 

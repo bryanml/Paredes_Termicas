@@ -1,8 +1,9 @@
 module globals
 implicit none
 
-integer, parameter :: N1 = 200, N2 = 200, N = N1+N2, nbins=50
-real(kind=8), allocatable :: r(:,:), v(:,:), f(:,:), fl(:,:), eps(:,:), mass(:), ecut(:,:),boundary(:)!,dens_z(:,:)
+integer, parameter :: N1 = 200, N2 = 200, N = N1+N2, nbins=100, n_layers = 50
+real(kind=8), allocatable :: r(:,:), v(:,:), f(:,:), fl(:,:), eps(:,:), mass(:), ecut(:,:),boundary(:),temp_z(:)!,dens_z(:,:)
+real(kind=8), allocatable :: temp_z_promedio(:)
 real(kind=8), parameter :: rho = 0.2, thermal_skin = 1.2, rc2 = 2.5*2.5
 integer , allocatable :: tipe(:)
 real(kind=8), parameter ::  gamma = 0.5, sigma = 1.0, kb = 1

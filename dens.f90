@@ -50,7 +50,7 @@ case(1)   ! Order N algorithm
     end do
     !dens_z(:,:) = dens_z_aux(:,:)+dens_z(:,:)
 case(2)  ! Writing files and normalizing
-    print '(/a,i6/)','   *  Density profiles over steps= ',count_obs_b 
+    print '(/a,i6/)','   *  Density profiles over steps= '
     open(unit=73,file='dens_z_prof.txt',status='replace')
     open(unit=173,file='dens_x_prof.txt',status='replace')
     open(unit=273,file='dens_y_prof.txt',status='replace')
@@ -72,5 +72,8 @@ case(2)  ! Writing files and normalizing
         r_bin_x = r_bin_x+ r_dummy_x
         r_bin_y = r_bin_y+ r_dummy_y
     end do
+    close(unit=73)
+    close(unit=173)
+    close(unit=273)
 end select
 end subroutine dens
